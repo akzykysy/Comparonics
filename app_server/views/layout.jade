@@ -5,16 +5,36 @@ html(ng-app= 'Comparonics')
 		title= title
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
-		link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Roboto')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-resource.js')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.js')
-		script(src='/javascripts/compareApp.js')
-		script(src='/javascripts/main.router.js')
+		script(src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous")
+		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", crossorigin="anonymous")
+		//script(src='/javascripts/main.router.js')
+		//script(src='/javascripts/compareController.js')
 	
 	body
 		div(ng-view)
-		block content
-		
-	
-		
+			block content
+				nav.navbar.navbar-default
+					.container-fluid
+						.navbar-header
+							button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNav')
+								span.icon-bar
+								span.icon-bar
+								span.icon-bar
+
+						#myNav.collapse.navbar-collapse
+							ul.nav.navbar-nav.navbar-right
+								li
+									a(href='/#register')
+										span.glyphicon.glyphicon-user
+										| Sign up
+								li
+									a(href='/#login')
+										span.glyphicon.glyphicon-log-in
+										| Login
+								li
+									a(href='/#allItems')
+										span.glyphicon.glyphicon-item
+										| All items

@@ -1,18 +1,22 @@
 var mongoose = require('mongoose');
 var passportLocalMongoose = require('passport-local-mongoose');
 
-var userSchema = new mongoose.Schema({
+var Schema = mongoose.Schema;
+	ObjectId = Schema.ObjectId;
+
+var userSchema = new Schema({
 	username: {type: String, required: true},
 	password: {type: String, required: true}
 });
 
 
-var productSchema = new mongoose.Schema({
+var productSchema = new Schema({
 	brand: {type: String, required: true},
 	type: {type: String, required: true},
 	model: {type: String, required: true},
 	price: {type: Number, required: true},
-	storeName: {type: String, required: true}
+	storeName: {type: String, required: true},
+	keywords: []
 });
 
 

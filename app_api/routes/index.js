@@ -10,12 +10,12 @@ var auth = jwt({
 });
 
 //Items
-//router.get('/items', ctrlItems.afsfdsf);
+router.get('/items', ctrlItems.productList);
 router.post('/items', ctrlItems.itemsCreate);
 router.get('/items/:itemid', ctrlItems.itemsReadOne);
 router.put('/items/:itemid', ctrlItems.itemsUpdateOne);
 router.delete('/items/:itemid', ctrlItems.itemsDeleteOne);
-
+router.get('/items/search', ctrlItems.getSearch)
 //users
 
 router.post('/register', ctrlAuth.register);

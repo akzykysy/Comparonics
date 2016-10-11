@@ -1,0 +1,28 @@
+<nav class='navbar navbar-default'>
+	<div class='container-fluid'>
+		<div>	
+			<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#myNav'>
+				<span class='icon-bar'></span>
+				<span class='icon-bar'></span>
+				<span class='icon-bar'></span>
+			</button>
+		</div>
+		<div id='myNav' class='navbar-collapse collapse'>
+			<ul class='nav navbar-nav navbar-right'>
+				<li><a href="register"><span class='glyphicon glyphicon-user'></span>Sign up</a></li>
+				<li><a href="login"><span class='glyphicon glyphicon-log-in'></span>Login</a></li>
+				<li><a href="items"><span class='glyphicon glyphicon-item'></span>List all</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div class='vertical-center-row'>
+<h1 style="align: center">{{vm.pageHeader.title}}</h1>
+<form name='find-items' method="get">
+	<input type='text' class='form-control' name='search' placeholder="search item here" required ng-model='mySearch'>
+	<button type='submit' class='btn btn-default' ng-click='search()'>Search</button>
+</form>
+
+</div>
+		

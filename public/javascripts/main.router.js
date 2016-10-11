@@ -1,18 +1,27 @@
-angular.module('Comparonics');
+angular.module('Comparonics', ['ngResource', 'ngRoute']);
 
-function config($routeProvider){
+function config($routeProvider, $locationProvider) {
     $routeProvider
-        .when('/',{
-            templateUrl:'partials/try.html',
-            controller:'itemsCtrl'
-            //controllerAs:'vm'
-    		})
-				.when('/api/items/:itemid', {
-						templateUrl: 'partials/item.html',
-						controller:'productCtrl'
+				.when('/', {
+						templateUrl: 'partials/home.view.html',
+						controller: 'homeCtrl',
+						controllerAs: 'vm'
 				})
-        .otherwise({redirectTo:'/'})
+				.when('/items', {
+            templateUrl: 'partials/allItems.html',
+            controller: 'itemsCtrl',
+						controllerAs: 'vm'
+				})
+				.when('/item/:itemid', {
+						templateUrl: 'partials/item.html',
+						controller: 'productCtrl',
+						controllerAs: 'vm'
+				})
+        .otherwise({redirectTo: '/'});
+	
+		$locationProvider.html5Mode(true);
+		
 };
 angular
     .module('Comparonics')
-    .config(['$routeProvider',config]);
+    .config(['$routeProvider', '$locationProvider', config])
